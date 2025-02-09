@@ -11,22 +11,23 @@ fixed_df.columns = ["No", "Yes"]
 fixed_df.reset_index(inplace=True)
 
 
+melted_df = fixed_df.melt(id_vars="LABEL", var_name="Response", value_name="Count")
+
 fig = px.bar(
-    fixed_df,
-    x=["No", "Yes"], 
+    melted_df,
+    x="Count",  
     y="LABEL",
-    orientation="h", 
-    labels={"LABEL": "Y-LABELS", "value": "X-LABELS"}
- 
+    color="Response",  
+    orientation="h",
+    labels={"LABEL": "Y-LABELS", "Count": "X-LABELS"},
+    color_discrete_map={"No": "red", "Yes": "blue"},
+    text="Count"  
 )
 
 
 fig.update_layout(
-    font=dict(size=16),  
-    title_font=dict(size=20),  
+    font=dict(size=16, family="Arial, sans-serif"),  
+    title_font=dict(size=20, family="Arial, sans-serif"), 
 )
 
-
 fig.show()
-
-# fixed_df.to_excel("transformed_df.xlsx", index=False)

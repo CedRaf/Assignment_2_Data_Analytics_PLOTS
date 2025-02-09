@@ -56,6 +56,11 @@ figure = go.Figure(go.Sankey(
     )
 ))
 
+figure.update_layout(
+    font=dict(size=16, family="Arial, sans-serif"),  
+    title_font=dict(size=20, family="Arial, sans-serif"), 
+)
+
 figure.show()
 
 

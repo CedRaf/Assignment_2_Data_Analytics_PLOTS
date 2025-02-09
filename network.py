@@ -63,7 +63,9 @@ fig.update_layout(
     hovermode='closest',
     margin=dict(b=0, l=0, r=0, t=40),
     xaxis=dict(showgrid=False, zeroline=False),
-    yaxis=dict(showgrid=False, zeroline=False)
+    yaxis=dict(showgrid=False, zeroline=False),
+    font=dict(size=16, family="Arial, sans-serif"),  
+    title_font=dict(size=20, family="Arial, sans-serif"), 
 )
 
 fig.show()
